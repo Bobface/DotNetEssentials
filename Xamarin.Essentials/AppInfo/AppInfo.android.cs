@@ -31,7 +31,9 @@ namespace Xamarin.Essentials
             var packageName = Platform.AppContext.PackageName;
             using (var info = pm.GetPackageInfo(packageName, PackageInfoFlags.MetaData))
             {
+#pragma warning disable CS0618 // Type or member is obsolete
                 return info.VersionCode.ToString(CultureInfo.InvariantCulture);
+#pragma warning restore CS0618 // Type or member is obsolete
             }
         }
 
